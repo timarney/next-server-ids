@@ -7,6 +7,7 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Form action={saveData}>
           <div>
+            <label htmlFor="name">Name</label>
             <input name="name" className="my-4 p-2 text-gray-600" />
           </div>
           <div>

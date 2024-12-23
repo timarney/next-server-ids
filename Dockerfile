@@ -20,6 +20,13 @@ RUN \
 
 # Rebuild the source code only when needed
 FROM base AS builder
+
+# Define build-time argument
+ARG NEXT_SERVER_ACTIONS_ENCRYPTION_KEY
+
+# Set environment variable using the argument
+ENV NEXT_SERVER_ACTIONS_ENCRYPTION_KEY=${NEXT_SERVER_ACTIONS_ENCRYPTION_KEY}
+
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
